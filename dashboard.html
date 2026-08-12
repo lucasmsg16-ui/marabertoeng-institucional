@@ -6,7 +6,6 @@
 <title>Redirecionando…</title>
 <link rel="canonical" href="https://app.marabertoeng.com.br/dashboard.html">
 <meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=https://app.marabertoeng.com.br/dashboard.html">
 <script>location.replace("https://app.marabertoeng.com.br/dashboard.html" + location.search + location.hash);</script>
 <style>
 body{background:#f0f4f8;color:#2c3e50;font-family:'Segoe UI',system-ui,sans-serif;
@@ -16,6 +15,7 @@ a{color:#1792C0}
 </head>
 <body>
   <p>O ObraIA mudou de endereço.<br>
-     <a href="https://app.marabertoeng.com.br/dashboard.html">Clique aqui se não for automático</a></p>
+     <a id="fallback" href="https://app.marabertoeng.com.br/dashboard.html">Clique aqui se não for automático</a></p>
+  <script>document.getElementById("fallback").href = "https://app.marabertoeng.com.br/dashboard.html" + location.search + location.hash;</script>
 </body>
 </html>
