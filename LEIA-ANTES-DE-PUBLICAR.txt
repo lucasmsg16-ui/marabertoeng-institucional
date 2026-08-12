@@ -1,0 +1,60 @@
+MAR ABERTO ENGENHARIA — SITE INSTITUCIONAL
+============================================
+
+O QUE É ESTA PASTA
+-------------------
+O rascunho da nova home institucional (index.html) que vai ocupar
+marabertoeng.com.br quando o ObraIA for movido para um subdomínio
+(app.marabertoeng.com.br). Nada aqui está no ar ainda — o ObraIA
+continua funcionando normalmente em marabertoeng.com.br até você
+decidir fazer a troca.
+
+COMO PUBLICAR ESTA PASTA NO GITHUB (sem gastar tokens do Claude)
+-------------------------------------------------------------------
+1. Abra o GitHub Desktop.
+2. File > Add Local Repository > selecione esta pasta
+   (marabertoeng-institucional).
+3. Se ele avisar que a pasta não é um repositório Git, clique em
+   "create a repository" (ele mesmo faz o git init).
+4. No campo de resumo do commit, escreva algo como:
+   "Primeira versão do site institucional"
+5. Clique em "Commit to main".
+6. Clique em "Publish repository" (deixe como privado ou público,
+   tanto faz por enquanto — dá pra mudar depois).
+
+Isso NÃO afeta o ObraIA. É um repositório novo, separado do
+obraia-orcamento. Zero risco.
+
+O QUE FALTA PARA A TROCA DE VERDADE (só quando você mandar)
+----------------------------------------------------------------
+Quando você quiser que marabertoeng.com.br vire este site e o
+ObraIA passe a viver em app.marabertoeng.com.br, os passos são:
+
+1. DNS: criar um registro CNAME "app" apontando para
+   lucasmsg16-ui.github.io (no painel onde o domínio foi registrado
+   — me diga qual é, ex: Registro.br, Cloudflare, GoDaddy).
+
+2. No repositório obraia-orcamento: trocar o conteúdo do arquivo
+   CNAME de "marabertoeng.com.br" para "app.marabertoeng.com.br".
+
+3. Neste repositório novo: adicionar um arquivo CNAME com o
+   conteúdo "marabertoeng.com.br".
+
+4. Atualizar alguns links absolutos que hoje apontam para
+   marabertoeng.com.br dentro do ObraIA (login.html, criar-senha.html,
+   e os textos dos e-mails de convite/recuperação no Supabase) para
+   apontarem para app.marabertoeng.com.br.
+
+5. No Supabase (Authentication > URL Configuration): trocar a
+   "Site URL" para https://app.marabertoeng.com.br.
+
+6. Deixar por alguns dias um redirecionamento automático em
+   marabertoeng.com.br/criar-senha.html e /login.html apontando para
+   o endereço novo, para não quebrar convites já enviados.
+
+Isso é uma troca de alguns minutos de trabalho, mas com uma janela
+curta (geralmente minutos, às vezes até 1h) em que o certificado
+SSL do novo domínio está sendo emitido pelo GitHub — por isso vale
+fazer num horário de menos movimento, não no meio do dia.
+
+Quando quiser seguir com isso, é só me chamar.
